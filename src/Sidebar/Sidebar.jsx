@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { CgShoppingCart } from "react-icons/cg";
 import Category from "./Category/Category";
 import Price from "./Price/Price";

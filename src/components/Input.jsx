@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const Input = ({ handleChange, value, title, name, color }) => {
   return (
     <label className="sidebar-label-container">

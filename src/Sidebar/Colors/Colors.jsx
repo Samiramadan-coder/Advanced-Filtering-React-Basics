@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./Colors.css";
 import Input from "../../components/Input";
 
