@@ -16,8 +16,10 @@ function App() {
     setQuery(event.target.value);
   };
 
-  const filteredItems = products.filter((product) =>
-    product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase() !== -1)
+  const filteredItems = products.filter(
+    (product) =>
+      product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !==
+      -1
   );
 
   // Radio Filters
@@ -27,6 +29,7 @@ function App() {
 
   // Buttons Filters
   const handleClick = (event) => {
+    console.log(event.target.value);
     setSelectedCategory(event.target.value);
   };
 
@@ -51,7 +54,7 @@ function App() {
     return filteredProducts.map(
       ({ img, title, star, reviews, prevPrice, newPrice }) => (
         <Card
-          key={Math.random}
+          key={Math.random()}
           img={img}
           title={title}
           star={star}
@@ -68,9 +71,9 @@ function App() {
   return (
     <>
       <Sidebar handleChange={handleChange} />
-      <Navigation />
-      <Recommended />
-      <Products />
+      <Navigation query={query} handleInputChange={handleInputChange} />
+      <Recommended handleClick={handleClick} />
+      <Products results={result} />
     </>
   );
 }
